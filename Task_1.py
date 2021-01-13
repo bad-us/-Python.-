@@ -67,6 +67,7 @@ SIZE = 10
 MIN_ITEM = -100
 MAX_ITEM = 100
 array = [random.randint(MIN_ITEM, MAX_ITEM) for _ in range(SIZE)]
+spam = 0
 print(array)
 
 result = []
@@ -75,13 +76,13 @@ for i in range(len(array)):
         result.append(i)
 print(f'Индексы четных элементов: {result}')
 
-result_new = [i for i in range(len(array)) if array[i] % 2 == 0]
-print(f'Индексы четных элементов: {result_new}')
+#result_new = [i for i in range(len(array)) if array[i] % 2 == 0]
+#print(f'Индексы четных элементов: {result_new}')
 
 sum = 0
-var = (SIZE, MIN_ITEM, MAX_ITEM, array, result, result_new)
+var = (SIZE, MIN_ITEM, MAX_ITEM, array, result, spam)
 for i in var:
     sum += sys.getsizeof(i)
 print(f'Под переменные используется {sum} байт памяти')
 
-# Под переменные используется 444 байт памяти
+# Под переменные используется 412 байт памяти
