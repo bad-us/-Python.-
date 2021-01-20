@@ -2,10 +2,7 @@
 массив, заданный случайными числами на промежутке [0; 50). Выведите на экран
 исходный и отсортированный массивы.'''
 
-from random import randint
-
-SIZE = 50
-
+import random
 import operator
 
 def sort_merge(L, compare=operator.lt):
@@ -20,7 +17,6 @@ def sort_merge(L, compare=operator.lt):
 def merge_list(list_1, list_2, compare):
     result = []
     i, j = 0, 0
-
     while i < len(list_1) and j < len(list_2):
         if compare(list_1[i], list_2[j]):
             result.append(list_1[i])
@@ -33,8 +29,9 @@ def merge_list(list_1, list_2, compare):
     result += list_2[j:]
     return result
 
-
-numbers = [randint(0, 50) for _ in range(SIZE)]
+SIZE = 10
+l = 50
+numbers = [int(random.uniform(0, l)) for _ in range(SIZE)]
 
 print('Array' , ' -- ', numbers)
 print('After sort', ' -- ', sort_merge(numbers))
